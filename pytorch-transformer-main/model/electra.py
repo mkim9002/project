@@ -2,10 +2,10 @@ from collections import namedtuple
 
 import torch
 from torch import nn
-from model.util import clones, temperature_sampling
+from util import clones, temperature_sampling
 import torch.nn.functional as F
-from model.util import log, gumbel_sample, mask_with_tokens, prob_mask_like, get_mask_subset_with_prob
-from model.transformer import PositionalEmbedding,Encoder
+from util import log, gumbel_sample, mask_with_tokens, prob_mask_like, get_mask_subset_with_prob
+from transformer import PositionalEmbedding,Encoder
 from transformers.activations import get_activation
 from torch.nn import CrossEntropyLoss
 
