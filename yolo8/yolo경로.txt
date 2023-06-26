@@ -1,0 +1,36 @@
+from ultralytics import YOLO
+import torch
+import os
+import multiprocessing
+
+def main():
+    # print(torch.cuda.is_available())
+    os.environ['KMP_DUPLICATE_LIB_OK']='True'
+
+    model = YOLO('yolov8n.pt')
+    model.train(data='crosswalk/data.yaml', epochs=2, patience=40, batch= 48, seed= 1030)
+    model.predict(source='crosswalk/test/images', save=True)
+
+if __name__ == '__main__':
+    multiprocessing.freeze_support()
+    main()
+
+
+
+
+
+#######################
+
+
+
+from ultralytics import YOLO
+import zipfile
+import os
+
+os.environ['KMP_DUPLICATE_LIB_OK']='True'
+
+model = YOLO('yolov8n.pt')
+
+if __name__ == '__main__':
+
+    model.predict(source='C:/Teamproject/test01.v1i.yolov8/test/images/', save=True)
