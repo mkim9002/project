@@ -9,7 +9,7 @@ app = Flask(__name__)
 # CHANGE OPENAI_API_KEY -> YOUR_API_KEY
 # EXAMPLE 
 # openai.api_key = "sk-JUg...."
-openai.api_key = "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"
+openai.api_key = ""
 
 @app.route('/')
 def index():
